@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Payment Provider Integration</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -25,6 +25,13 @@
     <div class="reveal">
     <div class="slides">
       <section data-background-image="img/background_init.png"></section>
+      <section data-background-image="img/background.png">
+	        <h1>INFO:</h1>
+	        <ul>
+	        	<li>SSID: SparkGuest</li>
+	        	<li>Password: Welcome2Spark</li>
+	        </ul>
+	     </section>
       <section data-background-image="img/background.png">
         <div style="width: 100%; height: 100%; float: left;">
           <img src="img/payment-gateways-1.png" border="0" height="650px">
@@ -53,9 +60,7 @@
           </ul>
         </section>
       </section>
-	      <section data-background-image="img/background.png">
-	        <h1>INFO:</h1>
-	      </section>
+
         <!-- START PCI COMPILANCE SLIDE -->
         <section data-background-image="img/background.png">
           <h1>PCI COMPILANCE</h1>
@@ -67,7 +72,7 @@
         </section>
         <!-- END PCI COMPILANCE SLIDE -->
         <section data-background-image="img/background.png">
-            <h5>Hosted solutions</h5>
+            <h1>Hosted solutions</h1>
         </section>
         <section data-background-image="img/background.png">
             <ul>
@@ -78,7 +83,7 @@
             </ul>
         </section>
         <section data-background-image="img/background.png">
-              <h5>Integrated solutions</h5>
+              <h1>Integrated solutions</h1>
         </section>
         <section data-background-image="img/background.png">
               <ul>
@@ -109,10 +114,30 @@
 					<h1>ERROR HANDLING</h1>
 				</section>
 				<section data-background-image="img/background.png">
-					<script src="https://gist.github.com/przemosk/28dab6f6a2ced502260e2ffd68ba78dd.js"></script>
+          <pre>
+          		<code data-trim data-noescape>
+								begin
+								  # Use Stripe's library to make requests...
+								rescue Stripe::CardError => e
+
+								rescue Stripe::RateLimitError => e
+
+								rescue Stripe::InvalidRequestError => e
+
+								rescue Stripe::AuthenticationError => e
+
+								rescue Stripe::APIConnectionError => e
+
+								rescue Stripe::StripeError => e
+
+								rescue => e
+								  # Something else happened, completely unrelated to Stripe
+								end
+          		</code>
+          </pre>
 				</section>
         <section data-background-image="img/background.png">
-              <h5>New trends in payment industry</h5>
+              <h1>New trends in payment industry</h1>
         </section>
         <section data-background-image="img/background.png">
               <ul>
@@ -120,9 +145,12 @@
                 <li>Mobile payments</li>
                 <li>P2P transactions</li>
                 <li>Blockchain</li>
+                <li>Voice Commerce</li>
               </ul>
         </section>
-        <section data-background-image="img/github_repo.png" class="future" style="top: 329.5px; display: block;" hidden="" aria-hidden="true"></section>
+        <section data-background-image="img/background.png" class="future" aria-hidden="true">
+        	<p>https://github.com/VygovskySergey/stripe_academy</p>
+        </section>
 			</div>
 		</div>
 
